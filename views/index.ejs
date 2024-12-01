@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <title>CRUD Operations</title>
-</head>
+<%- include("partials/header.ejs") %>
 <body>
 
+    <%- include("partials/nav.ejs") %>
+    <h1> Famous Quotes - Admin Section </h1>
 
- <h1> Famous Quotes - Admin Section </h1>
+    <form action="/authors" class="list-item">
+        <button class="btn btn-outline-primary">All Authors</button>
+    </form><br>
 
+    <form action="/author/new" class="list-item">
+        <button class="btn btn-outline-primary">New Author</button>
+    </form><br> 
 
-   <form action="/author/new">
-     <button>Add Authors</button>
-   </form><br>
+    <form action="/quotes" class="list-item">
+        <button class="btn btn-outline-primary">All Quotes</button>
+    </form>
 
+    <form action="/quote/new" class="list-item">
+        <button class="btn btn-outline-primary">New Quote</button>
+    </form><br>
 
-   <form action="/quote/new">
-     <button>Add Quotes</button>
-   </form><br>
-
-
-   <form action="/authors">
-     <button>List Authors</button>
-   </form><br>
- 
-   <form action="/quotes">
-     <button>List Quotes</button>
-   </form>
-
-
- </body>
+    <%- include("partials/footer.ejs") %>
+</body>
 </html>

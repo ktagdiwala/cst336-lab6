@@ -1,14 +1,20 @@
-<html>
-    <body>
-        <h1> Update/Delete Authors </h1>
+<%- include("partials/header.ejs") %>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <h1> Update/Delete Authors </h1>
 
 
-        <% for (i=0; i < authors.length; i++) { %>
+    <% for (i=0; i < authors.length; i++) { %>
+        <%=authors[i].firstName%>
+        <%=authors[i].lastName%> <br>
+        <div class="udLinks">
             <a href="/author/edit?authorId=<%=authors[i].authorId%>">UPDATE</a>
             <a href="/author/delete?authorId=<%=authors[i].authorId%>">DELETE</a>
+        </div>
+        <p></p>
 
-            <%=authors[i].firstName%>
-            <%=authors[i].lastName%> <br>
-        <% } %>
+    <% } %>
+
+    <%- include("partials/footer.ejs") %>
     </body>
 </html>

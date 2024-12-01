@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <h1>Updating Quote Data</h1>
+        <form method="POST" action="/quote/edit" class="input-form">
+        <input type="hidden" name="quoteId" value="<%=quoteInfo[0].quoteId%>">
+        Quote:
+        <textarea name="quote" class="long-text" required="required"><%=quoteInfo[0].quote%></textarea>
+        <br>
+        Author:
+        <select name="author" required="required">
+            <% for (author of authors) { %>
+                <option value="<%=author.authorId%>">
+                  <%=author.firstName%> <%=author.lastName%>
+                </option>
+            <% } %>
+        </select><br>
+        Category:
+        <select name="category">
+            <% for (quote of quotes) { %>
+                <option value="<%=quote.category%>">
+                  <%=quote.category%>
+                </option>
+            <% } %>
+        </select><br>
+        Likes:
+        <input type="number" name="likes" value="<%=quoteInfo[0].likes%>">
+        <br>
+
+        <button class="btn btn-outline-primary">Update Quote</button>
+        </form>
+
+        <%- include("partials/footer.ejs") %>
+</body>
+</html>

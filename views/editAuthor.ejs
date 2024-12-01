@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title>CRUD Operations</title>
-    </head>
-    <body>
-        <h1>Updating Author Data</h1>
-            <form method="POST" action="/author/edit">
+<%- include("partials/header.ejs") %>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <h1>Updating Author Data</h1>
+        <form method="POST" action="/author/edit" class="input-form">
             <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
             
             First Name:
-            <input type="text" name="fName" value="<%=authorInfo[0].firstName%>">
+            <input type="text" name="fName" value="<%=authorInfo[0].firstName%>" required="required">
             <br>
 
             Last Name:
-            <input type="text" name="lName" value="<%=authorInfo[0].lastName%>">
+            <input type="text" name="lName" value="<%=authorInfo[0].lastName%>" required="required">
             <br>
             
             Date of Birth:
-            <input type="date" name="dob"  value="<%=authorInfo[0].dobISO%>">
+            <input type="date" name="dob"  value="<%=authorInfo[0].dobISO%>" required="required">
             <br>
 
             Date of Death:
@@ -40,18 +36,18 @@
             <br>
 
             Profession:
-            <input type="text" name="profession" value="<%=authorInfo[0].profession%>"><br>
+            <input type="text" name="profession" value="<%=authorInfo[0].profession%>" required="required"><br>
             Country:
-            <input type="text" name="country" value="<%=authorInfo[0].country%>"><br>
+            <input type="text" name="country" value="<%=authorInfo[0].country%>" required="required"><br>
             Portrait URL:
-            <input type="text" name="portrait" value="<%=authorInfo[0].portrait%>"><br>
+            <input type="text" name="portrait" value="<%=authorInfo[0].portrait%>" required="required"><br>
             Bio:
-            <input type="text" name="bio" value="<%=authorInfo[0].biography%>"><br>
-            <br>  
-            <button>Add Author</button>
-            
-            <button>Update Author</button>
-            </form>
-    
-    </body>
+            <textarea name="bio" class="long-text" required="required"><%=authorInfo[0].biography%></textarea>
+            <br><br>  
+
+            <button class="btn btn-outline-primary">Update Author</button>
+        </form>
+
+        <%- include("partials/footer.ejs") %>
+</body>
 </html>
