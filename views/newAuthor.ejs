@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <h1>Adding a new Author</h1>
+
+        <form method="POST" action="/author/new">
+            First Name:
+            <input type="text" name="fName"><br>
+            Last Name:
+            <input type="text" name="lName"><br>
+            Date of Birth:
+            <input type="date" name="birthDate"><br>
+            Date of Death:
+            <input type="date" name="deathDate"><br>
+            Sex:
+            <select name="sex">
+                <option value = 'F'>F</option>
+                <option value = 'M'>M</option>
+            </select><br>
+            Profession:
+            <input type="text" name="profession"><br>
+            Country:
+            <input type="text" name="country"><br>
+            Portrait URL:
+            <input type="text" name="portrait"><br>
+            Bio:
+            <input type="text" name="bio"><br>
+            <br>  
+            <button>Add Author</button>
+        </form>
+        <% if (typeof message != "undefined"){ %>
+            <h3><%=message%></h3>
+        <% } %>
+    </body>
+</html>
