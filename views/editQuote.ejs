@@ -9,18 +9,31 @@
         <br>
         Author:
         <select name="author" required="required">
+            <option value="<%=quoteInfo[0].authorId%>"></option>
             <% for (author of authors) { %>
-                <option value="<%=author.authorId%>">
-                  <%=author.firstName%> <%=author.lastName%>
-                </option>
+                <% if(author.authorId == quoteInfo[0].authorId){%>
+                    <option value="<%=author.authorId%>" selected>
+                        <%=author.firstName%> <%=author.lastName%>
+                    </option>                    
+                <%}else{%>
+                    <option value="<%=author.authorId%>">
+                        <%=author.firstName%> <%=author.lastName%>
+                    </option>
+                <%}%>
             <% } %>
         </select><br>
         Category:
         <select name="category">
             <% for (quote of quotes) { %>
-                <option value="<%=quote.category%>">
-                  <%=quote.category%>
-                </option>
+                <% if(quote.category == quoteInfo[0].category){%>
+                    <option value="<%=quote.category%>" selected>
+                        <%=quote.category%>
+                    </option>
+                <%}else{%>
+                    <option value="<%=quote.category%>">
+                        <%=quote.category%>
+                    </option>
+                <%}%>
             <% } %>
         </select><br>
         Likes:
